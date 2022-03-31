@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod ugo+x ${finf ./* -type d}
+chmod a+X *
