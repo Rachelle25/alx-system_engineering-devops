@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-# Tell the story of passwd
+# script that tells the story of passwd
+# f1:USERNAME f2:PASSWORD f3:USERID f4:GROUPID f5:UIF f6:HOME f7:COMMAND
 
-file="/etc/passwd"
-while IFS=: read -r USER PASS ID_USER GROUP INFO HOME_D SHLL
+while IFS=: read -r f1 f2 f3 f4 f5 f6 f7
 do
-    printf "The user %s is part of the %s gang, lives in %s " "$USER" "$GROUP" "$HOME_D"
-    printf "and rides %s. %s's place is protected by the passcode %s, " "$SHLL" "$ID_USER" "$PASS"
-    printf "more info about the user here: %s" "$INFO"
-    printf "\n"
-done < "$file"
+    echo "The user $f1 is part of the $f4 gang, lives in $f6 and rides $f7. $f3's place is protected by the passcode $f2, more info about the user here: $f5"
+done < /etc/passwd
